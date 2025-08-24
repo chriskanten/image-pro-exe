@@ -1,33 +1,33 @@
-# 画像処理の基礎
+# Image Processing Basics
 
-目次
+table of contents
 
-- [準備](#準備)
-- [練習](#練習)
-- [課題の進め方](#課題の進め方)
-- [1周目：課題](#1周目課題)
-	- [課題1. 画素値と画像の関係](#課題1-画素値と画像の関係)
-	- [課題2. 画素位置と画像の関係](#課題2-画素位置と画像の関係)
-	- [課題3. 図形の描画](#課題3-図形の描画)
-	- [課題4. フィルタ](#課題4-フィルタ)
-	- [課題5. ヒストグラムと二値化](#課題5-ヒストグラムと二値化)
-	- [課題6. ヒストグラムと階調変換](#課題6-ヒストグラムと色調補正)
-- [2周目：課題](#2周目課題)
-	- [課題7. 図形の面積の計算](#課題7-図形の面積の計算)
-	- [課題8. 図形の輪郭線の長さの計算](#課題8-図形の輪郭線の長さの計算)
+- [Prepare](#Prepare)
+- [practice](#練習)
+- [How to proceed with the assignment](#課題の進め方)
+- [Round 1: Assignment](#1周目課題)
+	- [Assignment1. 画素値と画像の関係](#課題1-画素値と画像の関係)
+	- [Assignment2. 画素位置と画像の関係](#課題2-画素位置と画像の関係)
+	- [Assignment3. 図形の描画](#課題3-図形の描画)
+	- [Assignment4. フィルタ](#課題4-フィルタ)
+	- [Assignment5. ヒストグラムと二値化](#課題5-ヒストグラムと二値化)
+	- [Assignment6. ヒストグラムと階調変換](#課題6-ヒストグラムと色調補正)
+- [Round 2：Assignment](#2周目課題)
+	- [Assignment7. 図形の面積の計算](#課題7-図形の面積の計算)
+	- [Assignment8. 図形の輪郭線の長さの計算](#課題8-図形の輪郭線の長さの計算)
 - [レポート](#レポート)
 
-## 準備
+## preparation
 
-- 実験では，Pythonというプログラミング言語を使用します．実験開始前に，[install.bat](https://github.com/naka-tomo/image_proc_exp/raw/master/Python/install.bat)を右クリックメニューの`名前をつけてリンク先を保存`で**デスクトップ**に保存しなさい．
+- The experiment uses a programming language called Python. Before starting the experiment, right-click [install.bat](https://github.com/naka-tomo/image_proc_exp/raw/master/Python/install.bat)and select `Save link as` from the menu to save it to your **Desktop**．
 保存したinstall.batをダブルクリックで実行し，WinPythonをインストールしなさい．
 インストールに成功すると **winpython.bat** がデスクトップに作成されます．
 - [install.bat](https://github.com/naka-tomo/image_proc_exp/raw/master/Python/install.bat)をダウンロードするとファイル名が「install.bat.txt」となってしまう場合があります．その場合は，ファイル名を「install.bat」に変更してください．
 - PCを終了するとPythonの環境が消されてしまうので，PCを起動したら毎回，インストールを実行してください．
 
-## 練習
+## practice
 
-各課題に応じて，ソースコードと画像をダウンロードし，ソースコードを書き換えて実行することになります．以下の手順をよく確認し，何をしているかを理解して，課題へと進みなさい．
+For each assignment, you will need to download source code and images, modify the source code, and run it. Please carefully review the steps below, understand what you are doing, and then proceed with the assignment.
 
 1. 以下のソースコードと画像を右クリックメニューの`名前をつけてリンク先を保存`で**同じフォルダ内**に**ファイル名は変更せずに**保存しなさい．
 <br>　[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/hello_world.py)
@@ -45,19 +45,19 @@
 1. 各ウィンドウの右上の☓ボタンでウィンドウを閉じなさい．ウィンドウを閉じないとエラーとなる場合があります．もしエラーが発生したら，全てのウィンドウを閉じて手順2からやりなおしてください．
 
 
-## 課題の進め方
-各課題のソースコードをダウンロードして，ダウンロードしたソースコードを修正し，各課題を行いなさい．ダウンロードは各リンクを右クリックし，`名前をつけてリンク先を保存`で**ファイル名は変えずに同じフォルダ内に**保存しなさい．
+## How to proceed with the assignment
+Download the source code for each assignment, modify it, and complete each assignment. To download, right-click each link and select 'Save Link As' to save the file in the same folder without changing the file name.
 
-各課題で作成したプログラム，生成される画像やprint関数によって表示された文字列は必ず保存し，**必要に応じて**レポートに記載しなさい．また，レポートでは**理論（数式やプログラム）と生成される画像の関係をわかりやすく説明・考察しなさい．**
+Be sure to save the programs you create for each assignment, the images generated, and the text displayed by the print function, and include these in your report, if necessary. In your report, clearly explain and discuss the relationship between the theory (formulas and programs) and the images generated.
 
-そのために，講義中にレポートでの**説明・考察が可能な十分な結果**を得られるようにしなさい．
-
-
-## 1周目：課題
+To this end, ensure that you obtain sufficient results during the lecture to be able to explain and discuss them in your report.
 
 
+## Round 1: Assignment
 
-### 課題1. 画素値と画像の関係
+
+
+### Assignment1. Relationship between pixel values ​​and images
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai1.py)
 
@@ -68,7 +68,7 @@
 1. レポートでは，これらの値と生成される画像との対応を説明しなさい．
 
 
-### 課題2. 画素位置と画像の関係
+### Assignment2. Relationship between pixel position and image
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai2.py)
 
@@ -80,7 +80,7 @@
 
 
 
-### 課題3. 図形の描画
+### Assignment3. Drawing shapes
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai3.py)
 
@@ -92,7 +92,7 @@
 1. レポートでは，作成したプログラムの動作を分かりやすく説明しなさい．
 
 
-### 課題4. フィルタ
+### Assignment4. filter
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai4.py)
 
@@ -105,7 +105,7 @@
 1.  レポートでは原理（数式・ソースコード）と実行結果（printされる画素値）を照らし合わせて，それらフィルタの処理を分かりやすく説明しなさい．
 
 
-### 課題5. ヒストグラムと二値化
+### Assignment5. Histogram and Thresholding
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai5.py)
 
@@ -117,7 +117,7 @@
 
 1. レポートでは，作成したプログラムによってどのような処理が行われているのかを説明しなさい．また，その処理の中で使われている値を選択した理由を，ヒストグラムを使って分かりやすく説明しなさい．
 
-### 課題6. ヒストグラムと階調変換
+### Assignment6. Histogram and Tone Conversion
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai6.py)
 
@@ -131,10 +131,10 @@
 1. レポートでは，作成したプログラムによってどのような処理が行われているのかを説明しなさい．また，その処理の中で使われている値や式を選択した理由を，ヒストグラムを使って分かりやすく説明しなさい．
 
 
-## 2周目：課題
+## Round 2: Assignment
 - PCを終了するとPythonの環境が消されてしまうので，PCを起動したら[準備](#準備)でダウンロードしたinstall.batをダブルクリックし，インストールを実行してください．
 
-### 課題7. 図形の面積の計算
+### Assignment7. Calculating the area of ​​a shape
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai7.py)
 
@@ -145,7 +145,7 @@
 1. レポートでは，作成したプログラムによってどのような処理が行われているのかを分かりやすく説明しなさい．
 
 
-### 課題8. 図形の輪郭線の長さの計算
+### Assignment8. Calculating the length of a shape's contour line
 
 [ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai8.py)
 
@@ -156,7 +156,7 @@
 1. レポートでは，作成したプログラムによってどのような処理が行われているのかを分かりやすく説明しなさい．
 
 
-## レポート
+## Report
 
 レポートには以下の内容を含めること．
 
