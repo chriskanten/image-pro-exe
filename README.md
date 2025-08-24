@@ -3,46 +3,45 @@
 table of contents
 
 - [Prepare](#Prepare)
-- [practice](#練習)
-- [How to proceed with the assignment](#課題の進め方)
-- [Round 1: Assignment](#1周目課題)
-	- [Assignment1. 画素値と画像の関係](#課題1-画素値と画像の関係)
-	- [Assignment2. 画素位置と画像の関係](#課題2-画素位置と画像の関係)
-	- [Assignment3. 図形の描画](#課題3-図形の描画)
-	- [Assignment4. フィルタ](#課題4-フィルタ)
-	- [Assignment5. ヒストグラムと二値化](#課題5-ヒストグラムと二値化)
-	- [Assignment6. ヒストグラムと階調変換](#課題6-ヒストグラムと色調補正)
-- [Round 2：Assignment](#2周目課題)
-	- [Assignment7. 図形の面積の計算](#課題7-図形の面積の計算)
-	- [Assignment8. 図形の輪郭線の長さの計算](#課題8-図形の輪郭線の長さの計算)
-- [レポート](#レポート)
-
+- [practice](#practice)
+- [How to proceed with the assignment]
+- [Round 1: Assignment]
+	- [Assignment1. Relationship between pixel values ​​and images]
+	- [Assignment2. Relationship between pixel position and image]
+	- [Assignment3. Drawing shapes]
+	- [Assignment4. filter]
+	- [Assignment5. Histogram and Thresholding]
+	- [Assignment6. Histogram and Tone Conversion]
+- [Round 2：Assignment]
+	- [Assignment7. Calculating the area of ​​a shape]
+	- [Assignment8. Calculating the length of a shape's contour line]
+- [Report]
 ## preparation
 
 - The experiment uses a programming language called Python. Before starting the experiment, right-click [install.bat](https://github.com/naka-tomo/image_proc_exp/raw/master/Python/install.bat)and select `Save link as` from the menu to save it to your **Desktop**．
-保存したinstall.batをダブルクリックで実行し，WinPythonをインストールしなさい．
-インストールに成功すると **winpython.bat** がデスクトップに作成されます．
-- [install.bat](https://github.com/naka-tomo/image_proc_exp/raw/master/Python/install.bat)をダウンロードするとファイル名が「install.bat.txt」となってしまう場合があります．その場合は，ファイル名を「install.bat」に変更してください．
-- PCを終了するとPythonの環境が消されてしまうので，PCを起動したら毎回，インストールを実行してください．
+Double-click the saved install.bat to run it and install WinPython.
+If the installation is successful, **winpython.bat** will be created on your desktop.
+- When you download [install.bat](https://github.com/naka-tomo/image_proc_exp/raw/master/Python/install.bat), the file name may be "install.bat.txt". If this happens, change the file name to "install.bat".
+- The Python environment will be deleted when you shut down your PC, so please run the installation every time you start your PC.
 
 ## practice
 
 For each assignment, you will need to download source code and images, modify the source code, and run it. Please carefully review the steps below, understand what you are doing, and then proceed with the assignment.
 
-1. 以下のソースコードと画像を右クリックメニューの`名前をつけてリンク先を保存`で**同じフォルダ内**に**ファイル名は変更せずに**保存しなさい．
-<br>　[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/hello_world.py)
-<br>　[画像](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/hello_world.png)
+1. Right-click on the source code and image below and select `Save link as` from the menu, then save them in the same folder without changing the file name.
+<br>　[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/hello_world.py)
+<br>　[image](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/hello_world.png)
 
-1. [準備](#準備)でダウンロードし，インストールした`winpython.bat`をダブルクリックで実行し，IDLEXを起動しなさい．IDLEXはPythonのソースコードを編集・実行するためのソフトです．<br><img src="img/install.png" width="400" alt="" border="1">
+1. Double-click the `winpython.bat` file you downloaded and installed in [preparation](#preparation) to run IDLEX. IDLEX is software for editing and running Python source code.<br><img src="img/install.png" width="400" alt="" border="1">
 
-1. IDLEXの`File`&rarr;`Open`から，手順1でダウンロードしたソースコード`hello_world.py`を開きなさい．表示されたテキストがプログラムのソースコードです． <br><img src="img/openfile.gif" width="400" alt="" border="1">
+1. From IDLEX's `File`→`Open`, open the source code `hello_world.py` downloaded in step 1. The displayed text is the program's source code. <br><img src="img/openfile.gif" width="400" alt="" border="1">
 
-1. IDLEXの`Run`&rarr;`Run Module`によりプログラムを実行できます．<br><img src="img/run.gif" width="400" alt="" border="1">
+1. You can run the program by using IDLEX's `Run`&rarr;`Run Module`. <br><img src="img/run.gif" width="400" alt="" border="1">
 
-1. 一方のウィンドウには処理された画像が表示されます．ウィンドウの下側にある保存ボタン（図中の赤丸で囲まれたボタン）を押すと表示されている画像を保存できます．<br><img src="img/graph.PNG" width="400" alt="" border="1"><br>
-もう一方のウィンドウには,プログラム中で*print*関数によって指定された変数の中身が表示されます．このプログラムの場合は，画像の画素値が表示されています．`表示されている文字列を選択`&rarr; `右クリック`&rarr;`Copy`でコピーし，メモ帳などに貼り付けることで保存できます．<br><img src="img/shell.PNG" width="400" alt="" border="1"><br>
+1. One window displays the processed image. You can save the displayed image by clicking the Save button at the bottom of the window (circled in red in the image). <br><img src="img/graph.PNG" width="400" alt="" border="1"><br>
+The other window displays the contents of variables specified by the *print* function in the program. In this program, the pixel values ​​of the image are displayed. You can save the displayed text by `Select` → `Right-click` → `Copy` and pasting it into Notepad or another program.<br><img src="img/shell.PNG" width="400" alt="" border="1"><br>
 
-1. 各ウィンドウの右上の☓ボタンでウィンドウを閉じなさい．ウィンドウを閉じないとエラーとなる場合があります．もしエラーが発生したら，全てのウィンドウを閉じて手順2からやりなおしてください．
+1. Close each window using the X button in the upper right corner. If you do not close the window, an error may occur. If an error occurs, close all windows and start again from step 2.
 
 
 ## How to proceed with the assignment
@@ -59,124 +58,115 @@ To this end, ensure that you obtain sufficient results during the lecture to be 
 
 ### Assignment1. Relationship between pixel values ​​and images
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai1.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai1.py)
 
-1. プログラムをダウンロードして実行し，ソースコードを読んで何をしているかを確認しなさい．
+1. Download the program, run it, and read the source code to see what it does.
 
-1. 代入する値（元のソースコード内では255）を様々に変化させて色の変化を確認しないさい．
+1. Try changing the assigned value (255 in the original source code) to see the color change.
  
-1. レポートでは，これらの値と生成される画像との対応を説明しなさい．
+1. In your report, explain the correspondence between these values ​​and the generated image.
 
 
 ### Assignment2. Relationship between pixel position and image
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai2.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai2.py)
 
-1. プログラムをダウンロードして実行し，ソースコードを読んで何をしているかを確認しなさい．
+1. Download the program, run it, and read the source code to see what it does.
 
-1. 配列のインデックスの数字（元のソースコード内では3と7)を様々に変えて，これらの数字と画像との対応がどのようになっているか確認しなさい．
+1. Try changing the array index numbers (3 and 7 in the original source code) and see how these numbers correspond to the images.
 
-1. レポートでは，出力された画像を使って，インデックスと画像との対応をわかりやすく説明しなさい．
+1. In your report, use the output image to clearly explain the correspondence between the index and the image.
 
 
 
 ### Assignment3. Drawing shapes
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai3.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai3.py)
 
-1. プログラムをダウンロードして実行し，ソースコードを読んで何をしているかを確認しなさい．
+1. Download the program, run it, and read the source code to see what it does.
 
-1. ソースコード内の指定された箇所を変更して以下のような白い四角形が描かれた画像を生成しなさい．<br>
-![例](img/square.png)
+1. Modify the specified part in the source code to generate an image with a white rectangle like the one below.<br>
+![ex](img/square.png)
 
-1. レポートでは，作成したプログラムの動作を分かりやすく説明しなさい．
+1. In your report, please clearly explain the operation of the program you created.
 
 
 ### Assignment4. filter
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai4.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai4.py)
 
-[画像](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai4.bmp)
+[image](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai4.bmp)
 
-1. ソースコードをダウンロードして実行し，ソースコードを読んで何をしているかを確認しなさい．
+1. Download the source code, run it, and read the source code to see what it does.
 
-1. プログラムを変更しフィルタの値を変え，移動平均フィルタ，ラプラシアンフィルタを実装しなさい．
+1. Modify the program to change the filter values ​​and implement a moving average filter and a Laplacian filter.
 
-1.  レポートでは原理（数式・ソースコード）と実行結果（printされる画素値）を照らし合わせて，それらフィルタの処理を分かりやすく説明しなさい．
+1. In your report, please explain the processing of these filters in an easy-to-understand manner by comparing the principles (formulas and source code) with the execution results (printed pixel values).
 
 
 ### Assignment5. Histogram and Thresholding
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai5.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai5.py)
 
-[画像](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai5.bmp)
+[image](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai5.bmp)
 
-1. ソースコードをダウンロードして実行し，ソースコードを読んで何をしているかを確認しなさい．
+1. Download the source code, run it, and read the source code to see what it does.
 
-1. プログラムを実行すると表示されるヒストグラムを参照して，画像の特徴を表わす二値画像が生成されるようにプログラムを変更しなさい．．
+1. Run the program and refer to the histogram that is displayed. Modify the program so that it generates a binary image that represents the image's features.
 
-1. レポートでは，作成したプログラムによってどのような処理が行われているのかを説明しなさい．また，その処理の中で使われている値を選択した理由を，ヒストグラムを使って分かりやすく説明しなさい．
+1. In your report, explain what processing is performed by the program you created. Also, use a histogram to clearly explain why you selected the values ​​used in that processing.
 
 ### Assignment6. Histogram and Tone Conversion
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai6.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai6.py)
 
-[画像](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai6.bmp)
+[image](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai6.bmp)
 
-1. ソースコードをダウンロードして実行し，ソースコードを読んで何をしているかを確認しなさい．
+1. Download the source code, run it, and read the source code to see what it does.
 
-1. プログラムを実行すると表示されるヒストグラムを参照して，以下のような濃淡がよりはっきりとした画像を生成しなさい．<br>
- ![例](img/example.png)
+1. When you run the program, refer to the histogram that is displayed and generate an image with clearer shading, as shown below.<br>
+ ![ex](img/example.png)
 
-1. レポートでは，作成したプログラムによってどのような処理が行われているのかを説明しなさい．また，その処理の中で使われている値や式を選択した理由を，ヒストグラムを使って分かりやすく説明しなさい．
+1. In your report, explain what processing is performed by the program you created. Also, use histograms to clearly explain why you selected the values ​​and expressions used in that processing.
 
 
 ## Round 2: Assignment
-- PCを終了するとPythonの環境が消されてしまうので，PCを起動したら[準備](#準備)でダウンロードしたinstall.batをダブルクリックし，インストールを実行してください．
+- The Python environment will be deleted when you shut down your PC, so after restarting your PC, double-click the install.bat file you downloaded in [Preparation] (#Preparation) to perform the installation.
 
 ### Assignment7. Calculating the area of ​​a shape
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai7.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai7.py)
 
-[画像](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai7.bmp)
+[image](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai7.bmp)
 
-1. ダウンロードしたソースコードを改変し，画像中の6つの各図形の面積（画素数）を計算しなさい．
+1. Modify the downloaded source code and calculate the area (number of pixels) of each of the six shapes in the image.
 
-1. レポートでは，作成したプログラムによってどのような処理が行われているのかを分かりやすく説明しなさい．
+1. In your report, please clearly explain what processing is performed by the program you created.
 
 
 ### Assignment8. Calculating the length of a shape's contour line
 
-[ソースコード](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai8.py)
+[source code](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai8.py)
 
-[画像](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai8.bmp)
+[image](https://raw.githubusercontent.com/naka-tomo/image_proc_exp/master/kadai/kadai8.bmp)
 
-1. ダウンロードしたソースコードを改変し，画像中の6つの各図形の輪郭線の長さを計算しなさい．
+1. Modify the downloaded source code to calculate the contour length of each of the six shapes in the image.
 
-1. レポートでは，作成したプログラムによってどのような処理が行われているのかを分かりやすく説明しなさい．
+1. In your report, please clearly explain what processing is performed by the program you created.
 
 
 ## Report
 
-レポートには以下の内容を含めること．
+The report should include the following:
 
-- **表紙**
-タイトル・実験グループ・学籍番号・名前・実験日を記載する．
+- **cover**
+Please include the title, experimental group, student ID number, name, and experiment date.
 
-- **目的**
-実験全体の目的を簡潔に書く．
+- **purpose**
+Briefly describe the overall purpose of the experiment.
 
-- **理論**
-実験内で用いた理論を数式を用いて説明する．
+- **theory**
+The theory used in the experiment is explained using mathematical formulas.
 
-- 以下，各課題ごとに記述する．
-	- **実験方法**
-    ソースコードと使用した画像を記載し，各課題ごとに何が目的で，その目的を達成するためにどのような方法を使用したのかを記載する．ただし，ソースコードは重要な箇所を抜粋して記載すること．また，ソフトウェア(PythonやIDLEX)の使い方を記載する必要はなく，他のプログラミング言語であっても，本実験を再現可能な情報を書くこと．
-	- **実験結果・考察**
-	実行結果の画像と，必要であればprint文で表示された内容を記載し，**なぜ** そのような結果となったのかを，数式・ソースコード・実験結果を照らし合わせてわかりやすく説明する．
-    
-- **結論**
-実験の目的，行ったことを完結にまとめ，結論として何が得られたのかを説明する．
 
-- **感想**
 
